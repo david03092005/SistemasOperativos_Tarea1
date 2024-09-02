@@ -22,7 +22,9 @@ class memory {
 		
 		record getFromMem(record mar);
 		
-		int sizeMem();	
+		int sizeMem();
+		
+		void setInMem(record mar, string value);
 };
 
 

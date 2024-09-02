@@ -41,7 +41,7 @@ int cpu(memory memoryA){
 	record ICR = record();
 	record MAR = record();
 	record MDR = record();
-	record acu = record();
+	record ACU = record();
 	record ALU = record();
 	controlU ctrlU = controlU();
 	
@@ -65,6 +65,31 @@ int cpu(memory memoryA){
 		temp = memoryA.getFromMem(MAR);
 		MDR.setInstruction(temp.getAllIns());
 	}
+	else if (toUpper(IDecode[0]) == "SET") {
+		MAR.setInstruction(IDecode[1]);
+		memoryA.setInMem(MAR, IDecode[2]);
+	}
+	else if (toUpper(IDecode[0]) == "ADD") {
+		int a = 0;
+	}
+	else if (toUpper(IDecode[0]) == "INC") {
+		MAR.setInstruction(IDecode[1]);
+		temp = memoryA.getFromMem(MAR);
+		MDR.setInstruction(temp.getAllIns());
+		ALU.setInstruction(MDR.getAllIns());
+		ALU.increase();
+		MDR.setInstruction(ALU.getAllIns());
+		memoryA.setInMem(MAR, MDR.getAllIns());
+	}
+	else if (toUpper(IDecode[0]) == "STR") {
+		MDR.setInstruction(ACU.getAllIns());
+		MAR.setInstruction(IDecode[1]);
+		memoryA.setInMem(MAR, MDR.getAllIns());
+	}
+	else if (toUpper(IDecode[0]) == "END") {
+		bool end = true;
+	}
+	
 	
 //	cout << PC.getAllIns() << endl;
 	
