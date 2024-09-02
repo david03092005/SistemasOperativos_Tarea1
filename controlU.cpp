@@ -7,6 +7,7 @@ controlU::controlU(record instruction) {
 	this->instruction = instruction;
 };
 
+
 vector<string> controlU::decodeI() {
 	vector<string> decode;
 	for (int i = 0; i <= 3; i++){
@@ -20,3 +21,8 @@ vector<string> controlU::decodeI() {
 record controlU::getInstructionU() {
 	return this->instruction;	
 };
+
+
+void controlU::setInstructionU(record instruction) {
+	this->instruction = instruction;
+}

@@ -11,11 +11,16 @@ vector<record> memory::getRegisters() {
 }
 
 
-void memory::setRegisters(vector<record> registers) {
-	this->registers = registers;
+void memory::setRegister(record reg) {
+	this->registers.push_back(reg);
 }
 
 
-record memory::getFromMem(int pos) {
+record memory::getFromMem(record mar) {
+	int pos = stoi(mar.getAllIns());
 	return this->getRegisters()[pos];
+}
+
+int memory::sizeMem() {
+	return this->registers.size();
 }

@@ -17,6 +17,8 @@ class controlU {
 		
 		controlU(record instruction); //Constructor
 		
+		void setInstructionU(record instruction);
+		
 		record getInstructionU();
 		
 		vector<string> decodeI(); //Decodifica la instruccion

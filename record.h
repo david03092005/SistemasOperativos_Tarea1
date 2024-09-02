@@ -17,6 +17,12 @@ class record {
 		record(string instruction); //Constructor
 
 		string getInstruction(int pos);
+		
+		void setInstruction(string instruction);
+		
+		string getAllIns();
+		
+		void increase();
 };
 
 

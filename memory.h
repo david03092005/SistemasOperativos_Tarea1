@@ -17,9 +17,12 @@ class memory {
 		memory(vector<record> registers);
 		
 		vector<record> getRegisters();
-		void setRegisters(vector<record> registers);
 		
-		record getFromMem(int pos);
+		void setRegister(record registers);
+		
+		record getFromMem(record mar);
+		
+		int sizeMem();	
 };
 
 

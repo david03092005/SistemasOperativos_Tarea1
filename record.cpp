@@ -11,11 +11,25 @@ record::record(string instruction) {
 }
 
 
-string record::getInstruction(int pos){
+string record::getInstruction(int pos) {
 	vector<string> inst = split(instruction, ' ');
 	return inst[pos];
 }
 
+
+string record::getAllIns() {
+	return this->instruction;
+}
+
+
+void record::setInstruction(string instruction){
+	this->instruction = instruction;
+}
+
+
+void record::increase(){
+	this->instruction = to_string(stoi(this->instruction) + 1);
+}
 
 vector<string> split(string str, char pattern) {
     
