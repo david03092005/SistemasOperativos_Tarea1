@@ -12,8 +12,10 @@ vector<string> controlU::decodeI() {
 	vector<string> decode;
 	for (int i = 0; i <= 3; i++){
 		decode.push_back(this->getInstructionU().getInstruction(i));
+		if (decode[i][0] == 'D' and i != 0) {
+			decode[i] = decode[i].substr(1);
+		}
 	}
-	
 	return decode;
 };
 

@@ -8,7 +8,7 @@ using namespace std;
 
 
 class record {
-	private:
+	protected:
 		string instruction;
 		
 	public:
@@ -22,7 +22,7 @@ class record {
 		
 		string getAllIns();
 		
-		void increase();
+		//void increase(bool INCorDEC);
 };
 
 

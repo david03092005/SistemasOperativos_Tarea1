@@ -27,10 +27,6 @@ void record::setInstruction(string instruction){
 }
 
 
-void record::increase(){
-	this->instruction = to_string(stoi(this->instruction) + 1);
-}
-
 vector<string> split(string str, char pattern) {
     
     int posInit = 0;
