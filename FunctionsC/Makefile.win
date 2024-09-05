@@ -1,0 +1,46 @@
+# Project: figuras
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = cuadrado.o figuras.o main.o triangulo.o circulo.o rectangulo.o rombo.o
+LINKOBJ  = cuadrado.o figuras.o main.o triangulo.o circulo.o rectangulo.o rombo.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = figuras.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\DevCpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+cuadrado.o: cuadrado.cpp
+	$(CPP) -c cuadrado.cpp -o cuadrado.o $(CXXFLAGS)
+
+figuras.o: figuras.cpp
+	$(CPP) -c figuras.cpp -o figuras.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+triangulo.o: triangulo.cpp
+	$(CPP) -c triangulo.cpp -o triangulo.o $(CXXFLAGS)
+
+circulo.o: circulo.cpp
+	$(CPP) -c circulo.cpp -o circulo.o $(CXXFLAGS)
+
+rectangulo.o: rectangulo.cpp
+	$(CPP) -c rectangulo.cpp -o rectangulo.o $(CXXFLAGS)
+
+rombo.o: rombo.cpp
+	$(CPP) -c rombo.cpp -o rombo.o $(CXXFLAGS)
