@@ -12,6 +12,9 @@ void upper();
 int lowerCase(char *text);
 void lower();
 void ODH();
+void implicit(char ch);
+void explicitF(int entero);
+void explicitMenu();
 
 int main() {
 	int op = 0;
@@ -25,6 +28,7 @@ int main() {
 	    printf("7. Verificar minusculas\n");
 	    printf("8. Numero mas grande\n");
 	    printf("9. Numeros 1-10 en Oct, Dec, Hex\n");
+	    printf("10. implicito y explicito\n");
 	    printf("0. Para terminar la ejecucion\n");
 	    printf("Seleccione el numero del punto de la tarea que desea probar: ");
 	    scanf("%d", &op);
@@ -71,7 +75,10 @@ int main() {
 	        case 9:
 	            ODH();
 	            break;
-	        case 0:
+	        case 10:
+	        	explicitMenu();
+	        	break;
+		    case 0:
 	        	printf("Se termino la ejecucion");
 	        	break;
 	        default:
@@ -238,4 +245,35 @@ void ODH() {
     for (int i = 1; i <= 10; i++) {
         printf("%-10d%-12o%-12d%-12x\n", i, i, i, i);
     }
+}
+
+
+void implicit(char ch){
+    int asciiValue;
+
+    asciiValue = ch;
+
+    printf("Carácter: %c\n", ch);
+    printf("Valor ASCII (int): %d\n", asciiValue);
+}
+
+void explicitF(int entero){
+    double explicitCast;
+    
+    explicitCast = (double)entero;
+    printf("numero ingresado: %i\n", entero);
+    printf("Convertir explicitamente a decimal: %f\n", explicitCast);
+}
+
+
+void explicitMenu(){
+    char ch;
+    int entero;
+    printf("Ingrese una letra: ");
+    scanf("%c", &ch);
+    implicit(ch);
+    
+    printf("Ingrese un número entero: ");
+    scanf("%i", &entero);
+    explicitF(entero);
 }
